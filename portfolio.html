@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Teklini Technologies. View our completed projects in web development, mobile apps, AI solutions, and digital marketing.">
+    <title>Portfolio - Teklini Technologies</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d1b2a;
+            --secondary-color: #00b894;
+            --accent-color: #e63946;
+            --light-bg: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+        }
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        
+        /* Navigation */
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Section Styles */
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .section-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Portfolio Cards */
+        .portfolio-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-image img {
+            transform: scale(1.1);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(13, 27, 42, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        
+        .portfolio-category {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .portfolio-tech {
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background: var(--light-bg);
+            color: var(--text-dark);
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* Filter Buttons */
+        .portfolio-filters {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 0.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--primary-color);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h5 {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .portfolio-image {
+                height: 200px;
+            }
+            
+            .portfolio-content {
+                padding: 1rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-code"></i> Teklini Technologies</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content text-center fade-in">
+                <h1 class="display-4 fw-bold mb-3">Our Portfolio</h1>
+                <p class="lead">Showcasing our successful projects and satisfied clients</p>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Portfolio</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">150+</span>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">50+</span>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">98%</span>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item fade-in">
+                        <span class="stat-number">24/7</span>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filters -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="portfolio-filters fade-in">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="web">Web Development</button>
+                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="ai">AI Solutions</button>
+                <button class="filter-btn" data-filter="marketing">Digital Marketing</button>
+                <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row" id="portfolio-grid">
+                <!-- E-Commerce Project -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web ecommerce">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600" alt="AgriConnect E-Commerce Platform">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">E-Commerce</span>
+                            <h4 class="portfolio-title">AgriConnect Marketplace</h4>
+                            <p class="portfolio-description">Complete e-commerce platform connecting farmers directly with consumers, featuring M-Pesa integration and inventory management.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">M-Pesa API</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Project -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile ai">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/147413/twitter-facebook-together-exchange-of-information-147413.jpeg?auto=compress&cs=tinysrgb&w=600" alt="HealthTracker Mobile App">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Mobile App</span>
+                            <h4 class="portfolio-title">HealthTracker Pro</h4>
+                            <p class="portfolio-description">Cross-platform health monitoring app with AI-powered insights, appointment booking, and telemedicine features.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">AI Integration</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Push Notifications</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development Project -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web marketing">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="EduTech Learning Platform">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Web Platform</span>
+                            <h4 class="portfolio-title">EduTech Learning Hub</h4>
+                            <p class="portfolio-description">Comprehensive online learning management system with video streaming, assessment tools, and progress tracking.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">PHP Laravel</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Video Streaming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Chatbot Project -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="ai web">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600" alt="AI Customer Service Bot">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">AI Solution</span>
+                            <h4 class="portfolio-title">SmartSupport AI Assistant</h4>
+                            <p class="portfolio-description">Intelligent customer service chatbot with natural language processing, handling 80% of customer inquiries automatically.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">OpenAI API</span>
+                                <span class="tech-tag">WhatsApp API</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Natural Language Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing Project -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="marketing web">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Digital Marketing Campaign">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Digital Marketing</span>
+                            <h4 class="portfolio-title">TechStartup Growth Campaign</h4>
+                            <p class="portfolio-description">Complete digital marketing overhaul resulting in 300% increase in leads and 150% boost in online sales within 6 months.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">SEO</span>
+                                <span class="tech-tag">Google Ads</span>
+                                <span class="tech-tag">Social Media</span>
+                                <span class="tech-tag">Content Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Web Application -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Business Management System">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Web Application</span>
+                            <h4 class="portfolio-title">BizManager Pro</h4>
+                            <p class="portfolio-description">Comprehensive business management system with inventory tracking, invoicing, and financial reporting capabilities.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">.NET Core</span>
+                                <span class="tech-tag">SQL Server</span>
+                                <span class="tech-tag">REST APIs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile E-Commerce App -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile ecommerce">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fashion E-Commerce App">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Mobile E-Commerce</span>
+                            <h4 class="portfolio-title">StyleHub Fashion App</h4>
+                            <p class="portfolio-description">Modern fashion e-commerce app with AR try-on features, personalized recommendations, and seamless checkout experience.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">AR Technology</span>
+                                <span class="tech-tag">Stripe Payment</span>
+                                <span class="tech-tag">Push Notifications</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Analytics Dashboard -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web ai">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Analytics Dashboard">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Data Analytics</span>
+                            <h4 class="portfolio-title">DataInsight Dashboard</h4>
+                            <p class="portfolio-description">Interactive business intelligence dashboard with real-time data visualization and predictive analytics capabilities.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">D3.js</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Website -->
+                <div class="col-lg-4 col-md-6 portfolio-item" data-category="web marketing">
+                    <div class="portfolio-card fade-in">
+                        <div class="portfolio-image">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Corporate Website">
+                            <div class="portfolio-overlay">
+                                <a href="#" class="btn btn-primary"><i class="fas fa-external-link-alt"></i> View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <span class="portfolio-category">Corporate Website</span>
+                            <h4 class="portfolio-title">TechCorp Solutions</h4>
+                            <p class="portfolio-description">Professional corporate website with modern design, SEO optimization, and integrated content management system.</p>
+                            <div class="portfolio-tech">
+                                <span class="tech-tag">WordPress</span>
+                                <span class="tech-tag">Custom Theme</span>
+                                <span class="tech-tag">SEO Optimized</span>
+                                <span class="tech-tag">Responsive Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title fade-in">What Our Clients Say</h2>
+                <p class="lead fade-in">Testimonials from satisfied clients across various industries</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm fade-in">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-quote-left fa-2x text-secondary"></i>
+                            </div>
+                            <p class="card-text">"Teklini Technologies transformed our online presence completely. The e-commerce platform they built increased our sales by 200% in just 3 months!"</p>
+                            <div class="mt-3">
+                                <h6 class="fw-bold">Sarah Wanjiku</h6>
+                                <small class="text-muted">CEO, AgriConnect Kenya</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm fade-in">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-quote-left fa-2x text-secondary"></i>
+                            </div>
+                            <p class="card-text">"The mobile app they developed for our health clinic has revolutionized how we serve our patients. Professional, responsive, and innovative!"</p>
+                            <div class="mt-3">
+                                <h6 class="fw-bold">Dr. James Kiprotich</h6>
+                                <small class="text-muted">Medical Director, HealthFirst Clinic</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm fade-in">
+                        <div class="card-body text-center">
+                            <div class="mb-3">
+                                <i class="fas fa-quote-left fa-2x text-secondary"></i>
+                            </div>
+                            <p class="card-text">"Their AI chatbot solution reduced our customer service workload by 80% while improving customer satisfaction. Highly recommended!"</p>
+                            <div class="mt-3">
+                                <h6 class="fw-bold">Michael Ochieng</h6>
+                                <small class="text-muted">Operations Manager, TechStartup Ltd</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding text-center" style="background: linear-gradient(135deg, var(--primary-color), #1e3a8a); color: white;">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="display-5 fw-bold mb-4">Ready to Start Your Project?</h2>
+                <p class="lead mb-4">Join our growing list of satisfied clients and transform your business with our digital solutions</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <a href="contact.html" class="btn btn-primary btn-lg px-5">Get Free Consultation</a>
+                    <a href="services.html" class="btn btn-outline-light btn-lg px-5">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <h5><i class="fas fa-code"></i> Teklini Technologies</h5>
+                    <p>Empowering businesses with innovative digital solutions. Your success is our mission.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">IT Support</a></li>
+                        <li><a href="#">AI Solutions</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-envelope"></i> info@teklinitechnologies.com</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: #4a5568;">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Teklini Technologies. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed & Developed by Bravin Mireri Ouma</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Portfolio filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const items = document.querySelectorAll('.portfolio-item');
+                
+                items.forEach(item => {
+                    const categories = item.getAttribute('data-category');
+                    if (filter === 'all') {
+                        item.style.display = 'block';
+                    } else {
+                        if (categories && categories.includes(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

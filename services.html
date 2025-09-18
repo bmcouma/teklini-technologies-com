@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comprehensive digital services by Teklini Technologies. Web development, IT support, AI solutions, digital marketing, and more.">
+    <title>Our Services - Teklini Technologies</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0d1b2a;
+            --secondary-color: #00b894;
+            --accent-color: #e63946;
+            --light-bg: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+        }
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+        
+        /* Navigation */
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            transition: color 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Section Styles */
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .section-title.text-center::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--secondary-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary-color), #00a085);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h3 {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card .lead {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-details {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .service-details.show {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pricing-badge {
+            background: linear-gradient(135deg, var(--accent-color), #c92a2a);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .btn-toggle {
+            background: none;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-toggle:hover,
+        .btn-toggle.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        /* Category Filters */
+        .category-filters {
+            margin-bottom: 3rem;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            margin: 0.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), #1e3a8a);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h5 {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-code"></i> Teklini Technologies</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content text-center fade-in">
+                <h1 class="display-4 fw-bold mb-3">Our Services</h1>
+                <p class="lead">Comprehensive digital solutions tailored to your business needs</p>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Services</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="category-filters text-center fade-in">
+                <button class="filter-btn active" data-filter="all">All Services</button>
+                <button class="filter-btn" data-filter="development">Development</button>
+                <button class="filter-btn" data-filter="support">IT Support</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="content">Content</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <!-- Web Development Services -->
+            <div class="service-card fade-in" data-category="development">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>Professional Web Development & Design</h3>
+                        <p class="lead">Custom websites and web applications built with modern technologies, from business sites to complex e-commerce platforms.</p>
+                        <div class="pricing-badge">From KES 15,000 - 60,000+</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>Business Websites</h5>
+                                    <p><strong>KES 15,000 - 30,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Professional design</li>
+                                        <li>Responsive layout</li>
+                                        <li>SEO optimization</li>
+                                        <li>Contact forms</li>
+                                        <li>Social media integration</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>E-Commerce Stores</h5>
+                                    <p><strong>KES 25,000 - 60,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Shopping cart functionality</li>
+                                        <li>Payment gateway integration</li>
+                                        <li>Inventory management</li>
+                                        <li>Order tracking</li>
+                                        <li>Mobile optimization</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Custom Web Apps</h5>
+                                    <p><strong>KES 40,000+</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Custom functionality</li>
+                                        <li>Database integration</li>
+                                        <li>User authentication</li>
+                                        <li>API development</li>
+                                        <li>Scalable architecture</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Support Services -->
+            <div class="service-card fade-in" data-category="support">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>IT Support Services (Hardware & Software)</h3>
+                        <p class="lead">Comprehensive IT infrastructure management, hardware support, and network solutions for businesses of all sizes.</p>
+                        <div class="pricing-badge">From KES 1,000 - 30,000+ per month</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>On-Demand Support</h5>
+                                    <p><strong>KES 1,000 - 5,000 per incident</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Hardware troubleshooting</li>
+                                        <li>Software installation</li>
+                                        <li>Network configuration</li>
+                                        <li>System optimization</li>
+                                        <li>Emergency support</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>SME IT Packages</h5>
+                                    <p><strong>KES 10,000 - 20,000 per month</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Regular maintenance</li>
+                                        <li>Security updates</li>
+                                        <li>Backup management</li>
+                                        <li>Network monitoring</li>
+                                        <li>24/7 remote support</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Enterprise Solutions</h5>
+                                    <p><strong>KES 30,000+ per month</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Server management</li>
+                                        <li>Cloud migration</li>
+                                        <li>Security audits</li>
+                                        <li>Infrastructure planning</li>
+                                        <li>Dedicated support team</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI & Automation Services -->
+            <div class="service-card fade-in" data-category="automation">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>AI Chatbots & Business Automation</h3>
+                        <p class="lead">Intelligent automation solutions and AI-powered chatbots to streamline operations and improve customer experience.</p>
+                        <div class="pricing-badge">From KES 15,000 - 70,000+</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>AI Chatbots</h5>
+                                    <p><strong>KES 15,000 - 50,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>24/7 customer support</li>
+                                        <li>WhatsApp integration</li>
+                                        <li>Lead qualification</li>
+                                        <li>Booking automation</li>
+                                        <li>Multi-language support</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Process Automation</h5>
+                                    <p><strong>KES 20,000 - 70,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Workflow automation</li>
+                                        <li>Data entry automation</li>
+                                        <li>Report generation</li>
+                                        <li>Email automation</li>
+                                        <li>Inventory tracking</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>API Integration</h5>
+                                    <p><strong>KES 18,000 - 60,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>M-Pesa integration</li>
+                                        <li>SMS API setup</li>
+                                        <li>CRM connections</li>
+                                        <li>Payment gateways</li>
+                                        <li>Third-party services</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Marketing Services -->
+            <div class="service-card fade-in" data-category="marketing">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>Digital Marketing & SEO</h3>
+                        <p class="lead">Comprehensive digital marketing strategies to boost your online presence and drive quality traffic to your business.</p>
+                        <div class="pricing-badge">From KES 5,000 - 50,000+ per month</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>SEO Optimization</h5>
+                                    <p><strong>KES 10,000 - 25,000 per month</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Keyword research</li>
+                                        <li>On-page optimization</li>
+                                        <li>Content strategy</li>
+                                        <li>Link building</li>
+                                        <li>Performance tracking</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Social Media Marketing</h5>
+                                    <p><strong>KES 5,000 - 20,000 per month</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Content creation</li>
+                                        <li>Platform management</li>
+                                        <li>Audience engagement</li>
+                                        <li>Ad campaign setup</li>
+                                        <li>Analytics reporting</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>PPC Campaigns</h5>
+                                    <p><strong>KES 15,000 - 50,000 per campaign</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Google Ads setup</li>
+                                        <li>Facebook advertising</li>
+                                        <li>Campaign optimization</li>
+                                        <li>ROI tracking</li>
+                                        <li>A/B testing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile App Development -->
+            <div class="service-card fade-in" data-category="development">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>Mobile App Development - Android & iOS</h3>
+                        <p class="lead">Cross-platform mobile applications built with React Native and Flutter for seamless performance across all devices.</p>
+                        <div class="pricing-badge">From KES 25,000 - 80,000+</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>E-Commerce Apps</h5>
+                                    <p><strong>KES 30,000 - 70,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Product catalogs</li>
+                                        <li>Shopping cart</li>
+                                        <li>Payment integration</li>
+                                        <li>Order tracking</li>
+                                        <li>Push notifications</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Booking Apps</h5>
+                                    <p><strong>KES 25,000 - 50,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Appointment scheduling</li>
+                                        <li>Calendar integration</li>
+                                        <li>Payment processing</li>
+                                        <li>User profiles</li>
+                                        <li>SMS reminders</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Business Apps</h5>
+                                    <p><strong>KES 40,000 - 80,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Custom features</li>
+                                        <li>Data synchronization</li>
+                                        <li>Offline functionality</li>
+                                        <li>Analytics dashboard</li>
+                                        <li>Multi-user support</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Social Apps</h5>
+                                    <p><strong>KES 30,000 - 60,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>User profiles</li>
+                                        <li>Chat functionality</li>
+                                        <li>Content sharing</li>
+                                        <li>Social features</li>
+                                        <li>Community building</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content & Writing Services -->
+            <div class="service-card fade-in" data-category="content">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>Content Writing & Copywriting Services</h3>
+                        <p class="lead">Professional content creation that engages your audience, builds trust, and drives conversions across all platforms.</p>
+                        <div class="pricing-badge">From KES 3,000 - 25,000+</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>Website Copy</h5>
+                                    <p><strong>KES 10,000 - 25,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Landing pages</li>
+                                        <li>Product descriptions</li>
+                                        <li>About pages</li>
+                                        <li>Service descriptions</li>
+                                        <li>SEO optimization</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Blog Articles</h5>
+                                    <p><strong>KES 5,000 - 15,000 per article</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Research-based content</li>
+                                        <li>SEO optimized</li>
+                                        <li>Engaging narratives</li>
+                                        <li>Industry expertise</li>
+                                        <li>Call-to-actions</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Social Media Copy</h5>
+                                    <p><strong>KES 3,000 - 10,000 per campaign</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Platform-specific content</li>
+                                        <li>Hashtag research</li>
+                                        <li>Engagement focused</li>
+                                        <li>Brand voice consistency</li>
+                                        <li>Visual content captions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Services -->
+            <div class="service-card fade-in" data-category="content">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>Training & Digital Skills Workshops</h3>
+                        <p class="lead">Hands-on training programs that empower individuals and teams with practical digital skills for career growth.</p>
+                        <div class="pricing-badge">From KES 10,000 - 40,000+</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>Web Development</h5>
+                                    <p><strong>KES 15,000 - 40,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>HTML, CSS, JavaScript</li>
+                                        <li>React development</li>
+                                        <li>Backend technologies</li>
+                                        <li>Project-based learning</li>
+                                        <li>Certification included</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Digital Marketing</h5>
+                                    <p><strong>KES 12,000 - 30,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>SEO fundamentals</li>
+                                        <li>Social media marketing</li>
+                                        <li>Content strategy</li>
+                                        <li>Analytics tools</li>
+                                        <li>Practical exercises</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>AI & Tech Skills</h5>
+                                    <p><strong>KES 10,000 - 25,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>AI tool utilization</li>
+                                        <li>Automation basics</li>
+                                        <li>Future technologies</li>
+                                        <li>Business applications</li>
+                                        <li>Hands-on workshops</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CV Writing Services -->
+            <div class="service-card fade-in" data-category="content">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>International CV & Resume Writing</h3>
+                        <p class="lead">Professional CV and resume writing services with ATS optimization for international job market standards.</p>
+                        <div class="pricing-badge">From KES 200 - 1,000</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <h5>Basic Package</h5>
+                                    <p><strong>KES 200</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Entry-level focus</li>
+                                        <li>Template-based design</li>
+                                        <li>Essential details</li>
+                                        <li>1-day turnaround</li>
+                                        <li>PDF format</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Standard Package</h5>
+                                    <p><strong>KES 500</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Mid-career professionals</li>
+                                        <li>Custom content</li>
+                                        <li>Basic cover letter</li>
+                                        <li>2-day turnaround</li>
+                                        <li>Multiple formats</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Pro Package</h5>
+                                    <p><strong>KES 800</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Industry specialists</li>
+                                        <li>Enhanced layout</li>
+                                        <li>LinkedIn optimization</li>
+                                        <li>3-day turnaround</li>
+                                        <li>Achievement focused</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-3">
+                                    <h5>Premium Package</h5>
+                                    <p><strong>KES 1,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Executive level</li>
+                                        <li>Fully customized</li>
+                                        <li>Advanced cover letter</li>
+                                        <li>LinkedIn profile tips</li>
+                                        <li>ATS optimized</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hosting & Deployment -->
+            <div class="service-card fade-in" data-category="support">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <h3>Hosting & Deployment Services</h3>
+                        <p class="lead">Reliable hosting solutions and professional deployment services for websites and applications with 24/7 monitoring.</p>
+                        <div class="pricing-badge">From KES 6,000 - 40,000+</div>
+                        <button class="btn btn-toggle" onclick="toggleDetails(this)">Learn More</button>
+                        
+                        <div class="service-details">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5>Local Kenyan Hosting</h5>
+                                    <p><strong>KES 6,000 - 20,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Truehost, HostPinnacle</li>
+                                        <li>Kenya Web Experts</li>
+                                        <li>Safaricom Cloud</li>
+                                        <li>Local support</li>
+                                        <li>Fast local access</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Global Cloud Hosting</h5>
+                                    <p><strong>KES 8,000 - 25,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>AWS, Google Cloud</li>
+                                        <li>DigitalOcean, Vercel</li>
+                                        <li>Global CDN</li>
+                                        <li>Auto-scaling</li>
+                                        <li>99.9% uptime</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Custom Deployment</h5>
+                                    <p><strong>KES 15,000 - 40,000</strong></p>
+                                    <ul class="feature-list">
+                                        <li>Docker containers</li>
+                                        <li>CI/CD pipelines</li>
+                                        <li>Enterprise servers</li>
+                                        <li>Load balancing</li>
+                                        <li>Monitoring setup</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section text-center">
+        <div class="container">
+            <div class="fade-in">
+                <h2 class="display-5 fw-bold mb-4">Ready to Get Started?</h2>
+                <p class="lead mb-4">Let's discuss your project and find the perfect solution for your business needs.</p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                    <a href="contact.html" class="btn btn-primary btn-lg px-5">Get Free Quote</a>
+                    <a href="portfolio.html" class="btn btn-outline-light btn-lg px-5">View Our Work</a>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <i class="fas fa-clock fa-2x mb-3" style="color: var(--secondary-color);"></i>
+                            <h5>Fast Turnaround</h5>
+                            <p class="small">Most projects completed within agreed timelines</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <i class="fas fa-shield-alt fa-2x mb-3" style="color: var(--secondary-color);"></i>
+                            <h5>Quality Guarantee</h5>
+                            <p class="small">100% satisfaction guarantee on all our services</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <i class="fas fa-headset fa-2x mb-3" style="color: var(--secondary-color);"></i>
+                            <h5>24/7 Support</h5>
+                            <p class="small">Ongoing support for all our clients</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <i class="fas fa-money-bill-wave fa-2x mb-3" style="color: var(--secondary-color);"></i>
+                            <h5>Transparent Pricing</h5>
+                            <p class="small">No hidden fees, clear pricing structure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <h5><i class="fas fa-code"></i> Teklini Technologies</h5>
+                    <p>Empowering businesses with innovative digital solutions. Your success is our mission.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">IT Support</a></li>
+                        <li><a href="#">AI Solutions</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-envelope"></i> info@teklinitechnologies.com</p>
+                    <p><i class="fas fa-phone"></i> +254 700 000 000</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: #4a5568;">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Teklini Technologies. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p>Designed & Developed by Bravin Mireri Ouma</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Toggle service details
+        function toggleDetails(button) {
+            const details = button.parentElement.querySelector('.service-details');
+            const isVisible = details.classList.contains('show');
+            
+            if (isVisible) {
+                details.classList.remove('show');
+                button.textContent = 'Learn More';
+                button.classList.remove('active');
+            } else {
+                details.classList.add('show');
+                button.textContent = 'Show Less';
+                button.classList.add('active');
+            }
+        }
+
+        // Category filtering
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const cards = document.querySelectorAll('.service-card');
+                
+                cards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category');
+                        if (categories && categories.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
