@@ -1,62 +1,64 @@
-Here’s a **professional README.md** you can use for your repo `teklini-technologies-com`. It is structured, SEO-friendly, and well-documented to represent Teklini Technologies professionally:
+# 🌐 Teklini Technologies Website  
 
-```markdown
-# 🌐 Teklini Technologies Website
-
-Official repository for the **Teklini Technologies** website.  
-Teklini Technologies is an innovative IT solutions company specializing in **Web Development, AI Integration, Digital Strategy, and IT Support**, empowering businesses and communities in the digital economy.
-
----
-
-## 🚀 Project Overview
-This repository contains the source code for the **front-end of Teklini Technologies’ official website**, designed to be:
-- Professional, modern, and user-friendly  
-- Fully responsive across devices  
-- SEO optimized for search engine visibility and AI ranking  
-- Built with best practices in **HTML, CSS, JavaScript, and Bootstrap 5**  
-
-Images and icons are sourced from free resources, including **Pexels, Pixabay, Freepik, and Bootstrap Icons**.
+[![GitHub stars](https://img.shields.io/github/stars/bmcouma/teklini-technologies-com?style=social)](https://github.com/bmcouma/teklini-technologies-com/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/bmcouma/teklini-technologies-com?style=social)](https://github.com/bmcouma/teklini-technologies-com/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/bmcouma/teklini-technologies-com)](https://github.com/bmcouma/teklini-technologies-com/issues)
+[![GitHub license](https://img.shields.io/github/license/bmcouma/teklini-technologies-com)](./LICENSE)
+![Made with HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff)
+![Made with Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff)
 
 ---
 
-## 🛠️ Tech Stack
+## 📖 Overview  
+This is the official repository for the **Teklini Technologies Website**.  
+Teklini Technologies is a forward-thinking IT solutions company offering **web development, AI integration, digital strategy, and IT support**, helping businesses and communities thrive in the digital economy.  
+
+The website is designed to be:  
+- Professional and modern  
+- SEO optimized for search engines and AI ranking  
+- Fully responsive and mobile-first  
+- Scalable with room for backend integrations  
+
+---
+
+## 🛠️ Tech Stack  
 - **Frontend:** HTML5, CSS3, JavaScript  
 - **Framework:** Bootstrap 5  
-- **Icons:** Bootstrap Icons & Font Awesome  
-- **Media Assets:** Freepik, Pexels, Pixabay  
+- **Icons:** Bootstrap Icons, Font Awesome  
+- **Assets:** Freepik, Pexels, Pixabay (licensed free resources)  
 - **Version Control:** Git & GitHub  
 
-*(Backend with Django, APIs, and Database integrations will be added in future development phases.)*
+*(Backend with Django, APIs, and Databases will follow in later phases.)*  
 
 ---
 
-## 📄 Pages
-The website will include the following key sections:
-1. **Home** – Company overview, tagline, and call-to-action  
-2. **About Us** – Vision, mission, values, and company profile  
-3. **Services** – Full breakdown of IT services and solutions  
-4. **Portfolio / Projects** – Case studies, showcases, and past work  
-5. **Blog / Insights** – Articles, thought leadership, and digital tips  
-6. **Contact** – Contact form, map, and company details  
-7. **Careers / Join Us** – Opportunities and application links  
-8. **Community & Partnerships** – Ajira Digital Club leadership, collaborations, and initiatives  
-9. **FAQs** – Answers to common client questions  
-10. **Legal** – Privacy Policy, Terms & Conditions  
+## 📄 Website Pages  
+The website will include:  
+1. **Home** – Landing page with tagline and call-to-action  
+2. **About Us** – Vision, mission, values, and story  
+3. **Services** – Detailed IT services and solutions  
+4. **Portfolio / Projects** – Showcases and case studies  
+5. **Blog / Insights** – Articles and digital knowledge hub  
+6. **Contact** – Inquiry form, map, and contact details  
+7. **Careers / Join Us** – Opportunities and applications  
+8. **Community & Partnerships** – Ajira Digital Club initiatives and collaborations  
+9. **FAQs** – Client questions answered  
+10. **Legal** – Privacy Policy and Terms & Conditions  
 
 ---
 
-## 🔑 Features
-- Responsive and mobile-first design  
-- Clean UI/UX with Bootstrap components  
-- SEO optimized structure (meta tags, schema, headings, alt-text)  
-- Accessibility standards compliance (WCAG basics)  
-- Structured content for both **users** and **search engines/AI**  
+## 🔑 Features  
+- 🌍 **SEO optimized** (meta tags, schema, alt-text, headings)  
+- 📱 **Responsive design** with Bootstrap grid system  
+- ♿ **Accessibility friendly** (WCAG basics)  
+- 🖼️ **High-quality visuals** from free resources  
+- ⚡ **Performance-focused** with lightweight assets  
+- 🔒 **Future-ready** for backend/API integrations  
 
 ---
 
-## 📂 Folder Structure
-```
-
+## 📂 Folder Structure  
+```bash
 teklini-technologies-com/
 │── index.html
 │── about.html
@@ -68,44 +70,66 @@ teklini-technologies-com/
 │── community.html
 │── faq.html
 │── legal.html
+│
 │── /assets
 │    ├── /css
 │    ├── /js
 │    ├── /images
 │    ├── /icons
-
-```
+````
 
 ---
 
 ## 🌍 Deployment
-The site will be deployed using:
-- **Netlify / Vercel** (for static hosting)  
-- **Truehost / HostPinnacle Kenya** (for localized hosting and .co.ke domain)  
+
+The project can be deployed on:
+
+* **Netlify / Vercel** – for global static hosting
+* **Truehost / HostPinnacle Kenya** – for local hosting with .co.ke domain
+* **GitHub Pages** – for version-controlled free hosting
 
 ---
 
-## 🤝 Contribution
+## 🤝 Contribution  
+
 Contributions are welcome!  
-If you’d like to suggest improvements, feel free to contact me first.
+If you’d like to contribute to this project, please **reach out first** so we can align on ideas, features, and implementation.  
+
+📩 Contact me via:  
+- Email: [info@teklini.com](mailto:info@teklini.com)  
+- LinkedIn: [Bravin Ouma](https://www.linkedin.com/in/bravin-ouma/)  
+- GitHub: [bmcouma](https://github.com/bmcouma)  
+
+Once approved, the contribution flow will be:  
+1. Fork this repo  
+2. Create a feature branch (`git checkout -b feature-name`)  
+3. Commit changes (`git commit -m "Added new feature"`)  
+4. Push to branch (`git push origin feature-name`)  
+5. Open a Pull Request  
 
 ---
 
 ## 📧 Contact
-**Bravin M. Ouma**  
-Founder & Digital Strategy Lead – Teklini Technologies  
-📩 Email: [info@teklini.com](mailto:info@teklini.com)  
-🔗 Website: [www.teklini.com](https://www.teklini.com)  
-👔 LinkedIn: [Bravin Ouma](https://www.linkedin.com/in/bravin-ouma/)  
+
+**Bravin M. Ouma**
+Founder & Digital Strategy Lead – Teklini Technologies
+
+* 📩 Email: [info@teklini.com](mailto:info@teklini.com)
+* 🌐 Website: [www.teklini.com](https://www.teklini.com)
+* 👔 LinkedIn: [Bravin Ouma](https://www.linkedin.com/in/bravin-ouma/)
+* 🐙 GitHub: [bmcouma](https://github.com/bmcouma)
 
 ---
 
 ## 📜 License
-This project is licensed under the **MIT License** – you’re free to use, modify, and distribute with attribution.
+
+This project is licensed under the **MIT License** – free to use, modify, and distribute with proper attribution.
+
+---
+
+✨ **Teklini Technologies – Empowering Communities in the Digital Economy**
+
 ```
 
 ---
 
-👉 This README is professional, SEO-friendly, and makes your repo look like a **real tech company repo**.
-
-Do you want me to also **add shields/badges (e.g., GitHub stars, license, built with HTML/Bootstrap)** at the top for extra polish?
