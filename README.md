@@ -6,12 +6,6 @@
 [![GitHub license](https://img.shields.io/github/license/bmcouma/teklini-technologies-com)](./LICENSE)
 ![Made with HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff)
 ![Made with Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff)
-<<<<<<< HEAD
-=======
-![Lighthouse Performance](https://img.shields.io/badge/Performance-90%2B-green?logo=lighthouse)
-![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-95%2B-green?logo=lighthouse)
-![Lighthouse SEO](https://img.shields.io/badge/SEO-95%2B-green?logo=lighthouse)
->>>>>>> master
 
 ---
 
@@ -54,14 +48,12 @@ The website will include:
 ---
 
 ## 🔑 Features  
-<<<<<<< HEAD
 - 🌍 **SEO optimized** (meta tags, schema, alt-text, headings)  
 - 📱 **Responsive design** with Bootstrap grid system  
 - ♿ **Accessibility friendly** (WCAG basics)  
 - 🖼️ **High-quality visuals** from free resources  
 - ⚡ **Performance-focused** with lightweight assets  
 - 🔒 **Future-ready** for backend/API integrations  
-=======
 
 ### 🎨 Modern UI/UX
 - 🌍 **SEO optimized** (meta tags, schema markup, structured data)
@@ -93,7 +85,6 @@ The website will include:
 - 🔧 **Build optimization** with minification
 - 📱 **Progressive Web App** features
 - 🌍 **Multi-platform** hosting support  
->>>>>>> master
 
 ---
 
@@ -122,13 +113,11 @@ teklini-technologies-com/
 
 ## 🌍 Deployment
 
-<<<<<<< HEAD
 The project can be deployed on:
 
 * **Netlify / Vercel** – for global static hosting
 * **Truehost / HostPinnacle Kenya** – for local hosting with .co.ke domain
 * **GitHub Pages** – for version-controlled free hosting
-=======
 ### GitHub Pages (Recommended)
 
 The website is automatically deployed to GitHub Pages using GitHub Actions:
@@ -166,7 +155,6 @@ npm run build
 * **Vercel** – Connect GitHub repository for automatic deployments
 * **Truehost / HostPinnacle Kenya** – Upload files via FTP/cPanel
 * **AWS S3 + CloudFront** – For enterprise-level hosting
->>>>>>> master
 
 ---
 
@@ -189,8 +177,6 @@ Once approved, the contribution flow will be:
 
 ---
 
-<<<<<<< HEAD
-=======
 ## 📱 WhatsApp Integration
 
 The website includes comprehensive WhatsApp integration with branded messages:
@@ -212,18 +198,14 @@ The website includes comprehensive WhatsApp integration with branded messages:
 - 🔄 **Dynamic message generation** based on form selections
 - 📊 **Analytics tracking** for conversion optimization
 
->>>>>>> master
 ## 📧 Contact
 
 **Bravin M. Ouma**
 Founder & Digital Strategy Lead – Teklini Technologies
 
-<<<<<<< HEAD
 * 📩 Email: [info@teklini.com](mailto:info@teklini.com)
-=======
 * 📩 Email: [mireribravin2019@gmail.com](mailto:mireribravin2019@gmail.com)
 * 📱 WhatsApp: [+254 791 832 015](https://wa.me/254791832015)
->>>>>>> master
 * 🌐 Website: [www.teklini.com](https://www.teklini.com)
 * 👔 LinkedIn: [Bravin Ouma](https://www.linkedin.com/in/bravin-ouma/)
 * 🐙 GitHub: [bmcouma](https://github.com/bmcouma)
