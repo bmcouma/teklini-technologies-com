@@ -1,0 +1,59 @@
+# Teklini Technologies - Robots.txt
+# https://bmcouma.github.io/teklini-technologies-com/
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*.log$
+
+# Allow all search engines to crawl CSS and JS files
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /assets/icons/
+
+# Sitemap location
+Sitemap: https://bmcouma.github.io/teklini-technologies-com/sitemap.xml
+
+# Crawl delay (optional - be respectful)
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block problematic bots (optional)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /

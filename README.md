@@ -6,6 +6,12 @@
 [![GitHub license](https://img.shields.io/github/license/bmcouma/teklini-technologies-com)](./LICENSE)
 ![Made with HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff)
 ![Made with Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff)
+<<<<<<< HEAD
+=======
+![Lighthouse Performance](https://img.shields.io/badge/Performance-90%2B-green?logo=lighthouse)
+![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-95%2B-green?logo=lighthouse)
+![Lighthouse SEO](https://img.shields.io/badge/SEO-95%2B-green?logo=lighthouse)
+>>>>>>> master
 
 ---
 
@@ -48,12 +54,46 @@ The website will include:
 ---
 
 ## 🔑 Features  
+<<<<<<< HEAD
 - 🌍 **SEO optimized** (meta tags, schema, alt-text, headings)  
 - 📱 **Responsive design** with Bootstrap grid system  
 - ♿ **Accessibility friendly** (WCAG basics)  
 - 🖼️ **High-quality visuals** from free resources  
 - ⚡ **Performance-focused** with lightweight assets  
 - 🔒 **Future-ready** for backend/API integrations  
+=======
+
+### 🎨 Modern UI/UX
+- 🌍 **SEO optimized** (meta tags, schema markup, structured data)
+- 📱 **Fully responsive** design with Bootstrap 5 grid system
+- ♿ **WCAG 2.1 AA compliant** accessibility features
+- 🎭 **Dark mode toggle** with system preference detection
+- ✨ **Smooth animations** and micro-interactions
+- 🎯 **Modern color scheme** with CSS custom properties
+
+### ⚡ Performance & Optimization
+- 🚀 **Lighthouse score 90+** across all metrics
+- 📦 **Service Worker** for offline functionality
+- 🖼️ **Lazy loading** for images and content
+- 🎨 **Optimized assets** with minification
+- 📱 **Mobile-first** responsive design
+- ⚡ **Fast loading** with preloaded critical resources
+
+### 🔧 Technical Features
+- 📞 **WhatsApp integration** with branded messages
+- 📝 **Enhanced contact forms** with validation
+- 🎨 **Custom CSS animations** and transitions
+- 📊 **Animated counters** and statistics
+- 🔍 **Advanced search** and filtering capabilities
+- 🎯 **Interactive elements** and hover effects
+
+### 🌐 Deployment & Hosting
+- 🚀 **GitHub Actions** automated deployment
+- 📊 **Lighthouse CI** performance monitoring
+- 🔧 **Build optimization** with minification
+- 📱 **Progressive Web App** features
+- 🌍 **Multi-platform** hosting support  
+>>>>>>> master
 
 ---
 
@@ -82,11 +122,51 @@ teklini-technologies-com/
 
 ## 🌍 Deployment
 
+<<<<<<< HEAD
 The project can be deployed on:
 
 * **Netlify / Vercel** – for global static hosting
 * **Truehost / HostPinnacle Kenya** – for local hosting with .co.ke domain
 * **GitHub Pages** – for version-controlled free hosting
+=======
+### GitHub Pages (Recommended)
+
+The website is automatically deployed to GitHub Pages using GitHub Actions:
+
+1. **Enable GitHub Pages**:
+   - Go to repository Settings → Pages
+   - Select "GitHub Actions" as source
+   - The workflow will automatically deploy on every push to main branch
+
+2. **Live URL**: `https://bmcouma.github.io/teklini-technologies-com/`
+
+3. **Custom Domain** (Optional):
+   - Add a `CNAME` file with your domain name
+   - Configure DNS records to point to GitHub Pages
+
+### Manual Deployment
+
+```bash
+# Clone the repository
+git clone https://github.com/bmcouma/teklini-technologies-com.git
+cd teklini-technologies-com
+
+# Install dependencies
+npm install
+
+# Build optimized version
+npm run build
+
+# Deploy to your hosting provider
+```
+
+### Other Hosting Options
+
+* **Netlify** – Drag & drop the repository for instant deployment
+* **Vercel** – Connect GitHub repository for automatic deployments
+* **Truehost / HostPinnacle Kenya** – Upload files via FTP/cPanel
+* **AWS S3 + CloudFront** – For enterprise-level hosting
+>>>>>>> master
 
 ---
 
@@ -109,12 +189,41 @@ Once approved, the contribution flow will be:
 
 ---
 
+<<<<<<< HEAD
+=======
+## 📱 WhatsApp Integration
+
+The website includes comprehensive WhatsApp integration with branded messages:
+
+### Available Contact Options:
+1. **General Business Inquiries** (Recommended)
+   - Message: "Hi Bravin, I'm interested in your IT and digital services. Can you share more details?"
+   - URL: `https://wa.me/254791832015?text=Hi%20Bravin%2C%20I%27m%20interested%20in%20your%20IT%20and%20digital%20services.%20Can%20you%20share%20more%20details%3F`
+
+2. **Consultations & Appointments**
+   - Message: "Hi Bravin, I'd like to book a consultation with you. Please guide me on the next steps."
+
+3. **Collaborations & Partnerships**
+   - Message: "Hello Bravin, I'm interested in collaborating with you on a project. Let's discuss how we can work together."
+
+### Implementation Features:
+- 🎯 **Context-aware messages** based on user interaction
+- 📱 **Floating WhatsApp button** on all pages
+- 🔄 **Dynamic message generation** based on form selections
+- 📊 **Analytics tracking** for conversion optimization
+
+>>>>>>> master
 ## 📧 Contact
 
 **Bravin M. Ouma**
 Founder & Digital Strategy Lead – Teklini Technologies
 
+<<<<<<< HEAD
 * 📩 Email: [info@teklini.com](mailto:info@teklini.com)
+=======
+* 📩 Email: [mireribravin2019@gmail.com](mailto:mireribravin2019@gmail.com)
+* 📱 WhatsApp: [+254 791 832 015](https://wa.me/254791832015)
+>>>>>>> master
 * 🌐 Website: [www.teklini.com](https://www.teklini.com)
 * 👔 LinkedIn: [Bravin Ouma](https://www.linkedin.com/in/bravin-ouma/)
 * 🐙 GitHub: [bmcouma](https://github.com/bmcouma)

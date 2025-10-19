@@ -1,0 +1,40 @@
+{
+  "name": "teklini-technologies",
+  "version": "1.0.0",
+  "description": "Teklini Technologies - Professional Digital Solutions Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/index.html",
+    "build": "npm run minify-css && npm run minify-js && npm run minify-html",
+    "minify-css": "cleancss -o assets/css/main.min.css assets/css/main.css",
+    "minify-js": "terser assets/js/main.js -o assets/js/main.min.js -c -m",
+    "minify-html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o index.min.html index.html",
+    "lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "web-development",
+    "digital-solutions",
+    "IT-support",
+    "AI-solutions",
+    "digital-marketing",
+    "kenya-tech"
+  ],
+  "author": "Bravin M. Ouma",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "html-minifier-terser": "^7.2.0",
+    "live-server": "^1.2.2",
+    "lighthouse": "^11.0.0",
+    "terser": "^5.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bmcouma/teklini-technologies-com.git"
+  },
+  "homepage": "https://bmcouma.github.io/teklini-technologies-com/",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
