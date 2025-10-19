@@ -1,0 +1,410 @@
+/* ===============================================
+   TEKLINI TECHNOLOGIES - RESPONSIVE STYLES
+   Mobile-first responsive design system
+   =============================================== */
+
+/* Mobile First Approach - Base styles are for mobile */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .container {
+    max-width: var(--container-sm);
+    padding: 0 var(--space-6);
+  }
+  
+  .btn {
+    padding: var(--space-3) var(--space-5);
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--container-md);
+    padding: 0 var(--space-8);
+  }
+  
+  /* Navigation adjustments */
+  .navbar-nav {
+    flex-direction: row;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: var(--space-2) var(--space-4);
+  }
+  
+  /* Typography adjustments */
+  h1 { font-size: var(--text-6xl); }
+  h2 { font-size: var(--text-5xl); }
+  h3 { font-size: var(--text-4xl); }
+  
+  .section-title {
+    font-size: var(--text-4xl);
+  }
+  
+  /* Grid layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+  
+  /* Card adjustments */
+  .card {
+    height: 100%;
+  }
+  
+  /* Button adjustments */
+  .btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-lg);
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-lg);
+  }
+  
+  /* Hero section adjustments */
+  .hero-content {
+    padding-right: var(--space-8);
+  }
+  
+  /* Grid layouts */
+  .grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+  
+  /* Typography adjustments */
+  .section-title {
+    font-size: var(--text-5xl);
+  }
+  
+  /* Form adjustments */
+  .form-inline {
+    display: flex;
+    gap: var(--space-4);
+  }
+  
+  .form-inline .form-group {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+/* Extra large devices (large desktops, 1280px and up) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--container-xl);
+  }
+  
+  /* Grid layouts */
+  .grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-8);
+  }
+  
+  /* Spacing adjustments */
+  .section {
+    padding: var(--space-24) 0;
+  }
+  
+  .section-lg {
+    padding: var(--space-32) 0;
+  }
+}
+
+/* Extra extra large devices (larger desktops, 1536px and up) */
+@media (min-width: 1536px) {
+  .container {
+    max-width: var(--container-2xl);
+  }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767.98px) {
+  /* Navigation */
+  .navbar-brand {
+    font-size: var(--text-lg);
+  }
+  
+  .navbar-toggler {
+    padding: var(--space-1);
+    border: none;
+    border-radius: var(--radius-md);
+  }
+  
+  .navbar-collapse {
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--border-primary);
+  }
+  
+  /* Typography */
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+  h3 { font-size: var(--text-2xl); }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+  }
+  
+  /* Spacing adjustments */
+  .section {
+    padding: var(--space-16) 0;
+  }
+  
+  .container {
+    padding: 0 var(--space-4);
+  }
+  
+  /* Cards */
+  .card {
+    margin-bottom: var(--space-6);
+  }
+  
+  /* Buttons */
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  /* Forms */
+  .form-control {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Hero section */
+  .hero-section {
+    text-align: center;
+    padding: var(--space-20) 0 var(--space-16);
+  }
+  
+  .hero-title {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-8);
+  }
+  
+  /* Stats section */
+  .stat-item {
+    margin-bottom: var(--space-8);
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+  }
+  
+  .footer .row > div {
+    margin-bottom: var(--space-8);
+  }
+}
+
+/* Tablet-specific styles */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .hero-section {
+    padding: var(--space-24) 0;
+  }
+  
+  .hero-title {
+    font-size: var(--text-5xl);
+  }
+  
+  .section-title {
+    font-size: var(--text-4xl);
+  }
+  
+  /* Grid adjustments */
+  .grid-2 {
+    gap: var(--space-8);
+  }
+  
+  .grid-3 {
+    gap: var(--space-6);
+  }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 1024px) {
+  /* Navigation */
+  .navbar {
+    padding: var(--space-4) 0;
+  }
+  
+  /* Hero section */
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-size: var(--text-6xl);
+  }
+  
+  /* Services grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+  }
+  
+  /* Portfolio grid */
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+  }
+  
+  /* Testimonials */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-section {
+    padding: var(--space-16) 0;
+    min-height: auto;
+  }
+  
+  .section {
+    padding: var(--space-12) 0;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Ensure crisp text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Dark mode responsive adjustments */
+@media (prefers-color-scheme: dark) {
+  @media (max-width: 767.98px) {
+    .navbar {
+      background: rgba(17, 24, 39, 0.95);
+    }
+  }
+}
+
+/* Print responsive adjustments */
+@media print {
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+  
+  .section {
+    padding: var(--space-8) 0;
+    page-break-inside: avoid;
+  }
+  
+  .card {
+    page-break-inside: avoid;
+    margin-bottom: var(--space-4);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+}
+
+/* Accessibility responsive adjustments */
+@media (prefers-reduced-motion: reduce) {
+  .hero-section,
+  .card,
+  .btn {
+    transition: none;
+  }
+}
+
+/* Focus management for keyboard navigation */
+@media (prefers-reduced-motion: no-preference) {
+  .btn:focus,
+  .form-control:focus,
+  .nav-link:focus {
+    transition: all var(--transition-fast);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .nav-link {
+    padding: var(--space-3) var(--space-4);
+  }
+  
+  /* Remove hover effects */
+  .card:hover,
+  .btn:hover {
+    transform: none;
+  }
+}
+
+/* Utility classes for responsive behavior */
+.d-mobile-none {
+  display: block;
+}
+
+.d-tablet-none {
+  display: block;
+}
+
+.d-desktop-none {
+  display: block;
+}
+
+@media (max-width: 767.98px) {
+  .d-mobile-none {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .d-tablet-none {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .d-desktop-none {
+    display: none;
+  }
+}
